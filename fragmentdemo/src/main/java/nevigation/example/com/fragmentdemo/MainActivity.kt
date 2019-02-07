@@ -11,6 +11,7 @@ import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import nevigation.example.com.fragmentdemo.camera.CameraFragment
+import nevigation.example.com.fragmentdemo.gallery.GalleryFragment
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -59,16 +60,21 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
         val cameraFragment = CameraFragment()
-        cameraFragment.arguments = intent.extras
+        val galleryFragment = GalleryFragment()
         when (item.itemId) {
             R.id.nav_camera -> {
+                cameraFragment.arguments = intent.extras
                 val manager = supportFragmentManager
                 val transaction = manager.beginTransaction()
                 transaction.replace(R.id.content, cameraFragment)
                 transaction.commit()
             }
             R.id.nav_gallery -> {
-
+                galleryFragment.arguments = intent.extras
+                val manager = supportFragmentManager
+                val transaction = manager.beginTransaction()
+                transaction.replace(R.id.content, galleryFragment)
+                transaction.commit()
             }
             R.id.nav_slideshow -> {
 
