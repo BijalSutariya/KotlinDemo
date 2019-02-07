@@ -1,1 +1,1 @@
-include ':app', ':crud', ':nevigationdemo', ':nevigationdemo2'
+include ':app', ':crud', ':nevigationdemo', ':nevigationdemo2', ':fragmentdemo'
